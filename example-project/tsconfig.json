@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "es2017",
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": ["src","node_modules"]
+    },
+    "allowJs": false,
+    "checkJs": false,
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "declarationDir": "dist",
+    "noImplicitAny": true
+  },
+  "exclude": ["dist", "node_modules"]
+}
