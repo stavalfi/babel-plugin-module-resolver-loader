@@ -51,20 +51,25 @@ Will encounter a serious problem when they will use 'ts-loader' to generate the 
 The genrated `*.d.ts` files will be:
 
 ```typescript
-// dist/file-under-src.d.ts
-export declare type myType = number
+// dist/some-file-under-src-folder.d.ts
+export { myType } from 'file-under-src'       // BAD - absolute (invalid path)
 ```
 
 ```typescript
-// dist/some-file-under-src-folder.d.ts
-export { myType } from 'file-under-src'
+// dist/file-under-src.d.ts
+export declare type myType = number
 ```
 
 Instead of
 
 ```typescript
 // dist/some-file-under-src-folder.d.ts
-export { myType } from './file-under-src'
+export { myType } from './file-under-src'      // GOOD - relative (valid path)
+```
+
+```typescript
+// dist/file-under-src.d.ts
+export declare type myType = number
 ```
 
 Q: Why is this a problem?
