@@ -22,6 +22,10 @@ module.exports = function(source) {
       babelrc: false,
       plugins: [['module-resolver', options]],
     },
-    (error, { code, map }) => (error ? callback(error) : callback(null, code, map)),
+    (error, { code, map }) => {
+      console.log(options)
+      console.log('code: ', code)
+      return error ? callback(error) : callback(null, code, map)
+    },
   )
 }

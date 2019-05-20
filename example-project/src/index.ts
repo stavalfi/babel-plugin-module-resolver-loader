@@ -1,4 +1,5 @@
-export { r1 } from 'bobo'
+import isNumber from 'lodash/isNumber'
 
-const x: number = 1
-console.log(x)
+export default () => console.log('yohoho!!!')
+
+console.log(isNumber)
