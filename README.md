@@ -41,14 +41,12 @@ Library creators who uses Typescript will probably want to generate `*.d.ts` fil
 export { myType } from 'file-under-src'
 ```
 
-Instead of
-
 ```typescript
 // src/file-under-src.ts
 export const myType = number
 ```
 
-Will encounter a serious problem when they will use 'ts-loader' because typescript won't transform those absolute paths to relative paths when generating all the `d.ts` files.
+Will encounter a serious problem when they will use 'ts-loader' to generate the `*.d.ts` files because typescript won't transform back those absolute paths to relative paths when generating all the `d.ts` files.
 
 The genrated `*.d.ts` files will be:
 
