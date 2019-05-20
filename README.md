@@ -108,7 +108,7 @@ rules: [
           // all those options will go directly to babel-plugin-module-resolver plugin.
           // Read babel-plugin-module-resolver DOCS to see all options:
           // https://github.com/tleunen/babel-plugin-module-resolver/blob/master/DOCS.md
-          root: ["./src","./node_modules"],
+          root: ["./src"],
           extensions: ['.js', '.jsx', '.d.ts', '.ts', '.tsx'],
         },
       },
@@ -118,7 +118,10 @@ rules: [
 }
 ```
 
-Note1: You want to pass all the options that you passed to tsconfig.json:
+Note1: You ___ONLY___ want to pass the paths of the modules you built ___WITHOUT___ passing the location of node_modules and node_modules/@types. 
+Why? 
+1. Because if you pass `node_modules`, the plugin I use will find the external module there and replace the path with a relative path to there. if that external module has types file in `node_module/@types`, then typescript won't find it. 
+2. if you pass `node_modules/@types`, the plugin I use will find the external module there and replace the path with a relative path to there. There are no source files of that library under `node_module/@types/your_external_lib` so every loader you will ever use will fail to find the source files of the external modules you want to use.
 
 ```javascript
 "baseUrl": ".",
