@@ -13,45 +13,19 @@ Webpack loader for the plugin: [babel-plugin-module-resolver](https://github.com
 5. [Alternative solutions](#alternative-solutions)
 6. [Implementation Notes](#implementation-notes)
 
-
-### Limitation/Note (of Babel)
-
-https://github.com/babel/babel/issues/10024
-
-In short: Until the issue won't fix, don't write `// @ts-ignore` without `{`,`}`:
-```javascript
-const lmbda1 = () =>
-  // @ts-ignore
-  ...code with ts problem....
-```
-
-instead, write this:
-```javascript
-const lmbda1 = () => {
-  // @ts-ignore
-  ...code with ts problem....
-}
-```
-
-Why? Babel change the location of the comment so typescript will ignore the `// @ts-ignore`.
-Why no one ever encountered this issue? because 99% of the time, you probably run babel plugins after ts-loader and not before. 
-
 ### Installation
 
 webpack 4+
 
 There shouldn't be any reason to lock you on specific versions on the following packages.
-As a result, you must have:
+As a result, you must have under devDependencies:
 
 ```
-"babel-plugin-module-resolver": "^3.2.0",
 "@babel/core": "^7.4.4",
 "@babel/parser": "^7.4.4"
 ```
 
-There shouldn't be any problem to have them in older versions. (I didn't verified it).
-
-After that, install: `yarn add --dev @stavalfi/babel-plugin-module-resolver-loader`
+`yarn add --dev @babel/core @babel/parser @stavalfi/babel-plugin-module-resolver-loader`
 
 ---
 

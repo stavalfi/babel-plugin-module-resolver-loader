@@ -15,7 +15,6 @@ module.exports = (env, argv) => {
     externals: {
       '@babel/core': '@babel/core',
       '@babel/parser': '@babel/parser',
-      'babel-plugin-module-resolver': 'babel-plugin-module-resolver',
     },
 
     output: {
