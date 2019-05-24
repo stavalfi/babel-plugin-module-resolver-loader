@@ -44,7 +44,7 @@ module.exports = {
               // all those options will go directly to babel-plugin-module-resolver plugin.
               // Read babel-plugin-module-resolver DOCS to see all options:
               // https://github.com/tleunen/babel-plugin-module-resolver/blob/master/DOCS.md
-              root: resolveModulesPathsArray,
+              root: ['src'],
               extensions: ['.js', '.jsx', '.d.ts', '.ts', '.tsx'],
             },
           },
