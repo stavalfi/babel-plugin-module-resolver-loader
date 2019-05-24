@@ -10,7 +10,7 @@ const appEntryFilePath = path.resolve(srcPath, 'index.ts')
 const distPath = path.join(rootPath, 'dist')
 const eslintRcPath = path.join(rootPath, '.eslintrc')
 const componentsPath = path.resolve(srcPath, 'components')
-const resolveModulesPathsArray = [srcPath]
+const resolveModulesPathsArray = [srcPath, mainNodeModulesPath]
 module.exports = {
   rootPath,
   tsconfigPath,
