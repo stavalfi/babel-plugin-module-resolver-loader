@@ -1,5 +1,5 @@
 import isNumber from 'lodash/isNumber'
 
-export default () => console.log('yohoho!!!')
-
-console.log(isNumber)
+export default (x: number | undefined = undefined) =>
+  // @ts-ignore
+  console.log('yohoho!!!', isNumber, x + 1)
