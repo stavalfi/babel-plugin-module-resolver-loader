@@ -1,6 +1,6 @@
 {
   "name": "@stavalfi/babel-plugin-module-resolver-loader",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "webpack loader for babel-plugin-module-resolver",
   "main": "dist/index.js",
   "scripts": {

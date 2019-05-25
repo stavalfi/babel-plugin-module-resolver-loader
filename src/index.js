@@ -3,7 +3,7 @@ const parser = require('@babel/parser')
 const { getOptions } = require('loader-utils')
 const recast = require('recast')
 
-module.exports = function(source) {
+module.exports = function(source, map) {
   const callback = this.async()
   const options = getOptions(this)
 
@@ -11,6 +11,7 @@ module.exports = function(source) {
   // without removing/changing comments locations.
   // Reason: https://github.com/stavalfi/babel-plugin-module-resolver-loader/issues/4
   const ast = recast.parse(source, {
+    inputSourceMap: map,
     parser: {
       parse: source1 =>
         parser.parse(source1, {
@@ -25,6 +26,7 @@ module.exports = function(source) {
   core
     .transformAsync('', {
       ast: true,
+      filename: this.resourcePath,
       code: false,
       configFile: false,
       plugins: [
