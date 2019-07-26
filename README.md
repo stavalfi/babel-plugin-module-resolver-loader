@@ -2,8 +2,6 @@
 
 Webpack loader for the plugin: [babel-plugin-module-resolver](https://github.com/tleunen/babel-plugin-module-resolver) by [@Tommy](Tommy)
 
-##### PRs are welcome!
-
 ---
 
 1. [Installation](#installation)
