@@ -1,4 +1,4 @@
-const { distPath, appEntryFilePath, resolveModulesPathsArray } = require('./paths')
+const { distPath, appEntryFilePath, srcPath, mainNodeModulesPath } = require('./paths')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const path = require('path')
 
@@ -17,7 +17,7 @@ module.exports = {
 
   resolve: {
     extensions: ['.js', '.sass', '.json', '.ts', '.tsx'],
-    modules: resolveModulesPathsArray,
+    modules:  [srcPath, mainNodeModulesPath],
   },
 
   plugins: [new CleanWebpackPlugin()],
