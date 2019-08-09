@@ -11,7 +11,37 @@ module.exports = function(source, map) {
     sourceFilename: this.resourcePath,
     babelrc: false,
     sourceType: 'module',
-    plugins: ['jsx', 'typescript'],
+    plugins: [
+      'jsx',
+      'typescript',
+      'classProperties',
+      'asyncGenerators',
+      'bigInt',
+      'classPrivateProperties',
+      'classPrivateMethods',
+      'decorators-legacy',
+      'doExpressions',
+      'dynamicImport',
+      'exportDefaultFrom',
+      'exportNamespaceFrom',
+      'functionBind',
+      'functionSent',
+      'importMeta',
+      'logicalAssignment',
+      'nullishCoalescingOperator',
+      'numericSeparator',
+      'objectRestSpread',
+      'optionalCatchBinding',
+      'optionalChaining',
+      'partialApplication',
+      [
+        'pipelineOperator',
+        {
+          proposal: 'smart',
+        },
+      ],
+      'throwExpressions',
+    ],
   })
 
   core.transformFromAst(

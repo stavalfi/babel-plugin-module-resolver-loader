@@ -6,11 +6,10 @@ const tsconfigTestPath = path.resolve(rootPath, 'tsconfig.test.json')
 const mainNodeModulesPath = path.resolve(rootPath, 'node_modules')
 const srcPath = path.resolve(rootPath, 'src')
 const typesDtsPath = path.resolve(srcPath, 'index.d.ts')
-const appEntryFilePath = path.resolve(srcPath, 'index.ts')
+const appEntryFilePath = path.resolve(srcPath, 'index.tsx')
 const distPath = path.join(rootPath, 'dist')
 const eslintRcPath = path.join(rootPath, '.eslintrc')
 const componentsPath = path.resolve(srcPath, 'components')
-const resolveModulesPathsArray = [srcPath, mainNodeModulesPath]
 module.exports = {
   rootPath,
   tsconfigPath,
@@ -22,5 +21,4 @@ module.exports = {
   distPath,
   appEntryFilePath,
   typesDtsPath,
-  resolveModulesPathsArray,
 }

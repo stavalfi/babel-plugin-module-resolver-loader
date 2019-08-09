@@ -18,6 +18,8 @@
     "lodash": "^4.17.11"
   },
   "devDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
     "@babel/parser": "^7.4.4",
